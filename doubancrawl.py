@@ -14,6 +14,7 @@ findrating=re.compile(r'<span class="rating_num" property="v:average">(.*)</span
 findjudge=re.compile(r'<span>(\d*)人评价</span>')
 findinq=re.compile(r'<span class="inq">(.*)</span>')
 findbd=re.compile(r'<p class="">(.*?)</p>',re.S)
+
 def main():
     # 豆瓣Top250网址(末尾的参数 ?start= 加不加都可以访问到第一页)
     baseUrl = "https://movie.douban.com/top250?start="
@@ -59,12 +60,14 @@ def getData(baseurl):
         # 对页面源码逐一解析
         soup = BeautifulSoup(html, "html.parser")
         for item in soup.find_all('div', class_="item"):
+            print(item)
             data = []
             item = str(item)
             link = re.findall(findlink, item)
             data.append(link)
 
             img=re.findall(findimgsrc,item)
+
 
             title = re.findall(findtitle, item)
             if len(title) == 2:
@@ -96,6 +99,7 @@ def getData(baseurl):
 
             bd = re.findall(findbd, item)[0]
             bd = re.sub( "\\xa0|(<br/>)|<br|/\.\.\.|/\n"," ", bd)
+
             data.append(bd.strip())
             dataList.append(data)
     # 返回解析好的数据
@@ -116,14 +120,14 @@ def saveData(dataList, savePath):
         sheet.write(0, i, col[i])
 
     # 写入电影信息（从第二行开始）
-    for i in range(0, 250):
-        print("正在保存->第%d部电影" % (i + 1))
-        data = dataList[i]  # 取出某部电影数据
+    for i in range(1, 251):
+        print("正在保存->第%d部电影" % (i))
+        data = dataList[i-1]  # 取出某部电影数据
         for j in range(0, len(col)):
             if j < len(data):
-                sheet.write(i + 1, j, data[j])
+                sheet.write(i, j, data[j])
             else:
-                sheet.write(i + 1, j, "")  # 如果data中没有足够的元素，写入空字符串
+                sheet.write(i, j, "")  # 如果data中没有足够的元素，写入空字符串
 
     book.save(savePath)  # 保存Excel
 
