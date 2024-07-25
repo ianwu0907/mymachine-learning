@@ -10,8 +10,13 @@ def get_url(stockn):
     url=f"https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351043505281850346234_1721885857246&secid=0.{stockn}&ut=fa5fd1943c7b386f172d6893dbfba10b&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=1000000&_"
     response=requests.get(url,headers=header)
     content=response.content.decode("utf-8")
-
-
+    if re.search('"data":null', content):
+        for i in range (1,10):
+            url = f"https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351043505281850346234_1721885857246&secid={i}.{stockn}&ut=fa5fd1943c7b386f172d6893dbfba10b&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=1000000&_"
+            response = requests.get(url, headers=header)
+            content = response.content.decode("utf-8")
+            if not re.search('"data":null', content):
+                break
     pat=re.compile('"klines":(\[.*?])')
     strlist=re.findall(pat,content)[0]
     strlist=eval(strlist)
@@ -39,7 +44,7 @@ def get_data(strlist,stockn):
         }
         dictlist.append(dict)
     df=pd.DataFrame(dictlist)
-    df.to_excel(stockn+"_"+stockdata[0][0]+".xlsx",index=False)
+    df.to_excel(stockn+"_history"+".xlsx",index=False)
 
 
 def main():
