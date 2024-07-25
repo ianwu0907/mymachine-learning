@@ -31,7 +31,7 @@ def get_data(strlist,stockn):
             "最高价":stockdatas[3],
             "最低价":stockdatas[4],
             "成交量":stockdatas[5],
-            "成交额":stockdatas[6],
+            "成交额(千元)":round(float(stockdatas[6])/1000,2),
             "振幅(%)":stockdatas[7],
             "涨跌幅(%)":stockdatas[8],
             "涨跌额":stockdatas[9],

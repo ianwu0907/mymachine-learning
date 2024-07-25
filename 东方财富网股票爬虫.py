@@ -35,7 +35,7 @@ def get_data(cmd):
                         "涨跌幅":dicts["f3"],
                         "涨跌额":dicts["f4"],
                         "成交量 （手）":dicts["f5"],
-                        "成交额 (千元)":dicts["f6"],
+                        "成交额":dicts["f6"],
                         "振幅 （%）":dicts["f7"],
                         "最高":dicts["f15"],
                         "最低":dicts["f16"],
