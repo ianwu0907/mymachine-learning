@@ -43,3 +43,4 @@ To run the program, you need to install the following packages:
 # ***UPDATES***:
 
 - 2024/7/26 uploaded this repository to ***myproject***
+- 2024/7/27 updated data-process method to replace 0 value train/test data in order to calculate the relative errors.

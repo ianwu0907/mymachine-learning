@@ -1,5 +1,4 @@
 import datetime
-
 import numpy as np
 import pandas as pd
 import torch
@@ -179,16 +178,14 @@ def show(code, train_end, n, columns, p):
     train_true = df_train[["open", "high", "low", "close"]].values[n:]
     test_true = df_test[["open", "high", "low", "close"]].values[n:]
 
-    # Define a small epsilon value to replace zeros
-    epsilon = 1e20
 
 
 
     train_mae = mean_absolute_error(train_true, train)
     test_mae = mean_absolute_error(test_true, test)
 
-    train_true[train_true == 0] = epsilon
-    test_true[test_true == 0] = epsilon
+    train_true[train_true == 0] = np.mean(train_true[train_true != 0])
+    test_true[test_true == 0] = np.mean(test_true[test_true != 0])
 
     train_relative_error = np.mean(np.abs((train_true - train) / train_true))
     test_relative_error = np.mean(np.abs((test_true - test) / test_true))
@@ -406,7 +403,7 @@ if __name__ == "__main__":
 
 
 
-    # 增量训练
+    # 二次训练
     second_stock_code = input("请输入第二支股票的代码:")
     save_to_xlsx(second_stock_code)
     n = int(input("请输入序列长度:"))

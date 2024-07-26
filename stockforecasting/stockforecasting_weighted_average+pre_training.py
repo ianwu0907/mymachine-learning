@@ -204,12 +204,9 @@ def show(first_stock_code,second_stock_code,code, train_end, n, columns, p):
     # 计算绝对误差和相对误差
     train_true = df_train[["open", "high", "low", "close"]].values[n:]
     test_true = df_test[["open", "high", "low", "close"]].values[n:]
-    # Define a large epsilon value to replace zeros
-    epsilon = 1e20
 
-
-    train_true[train_true == 0] = epsilon
-    test_true[test_true == 0] = epsilon
+    train_true[train_true == 0] = np.mean(train_true[train_true != 0])
+    test_true[test_true == 0] = np.mean(test_true[test_true != 0])
 
     train_relative_error1 = np.mean(np.abs((train_true - train1) / train_true))
     test_relative_error1 = np.mean(np.abs((test_true - test1) / test_true))
