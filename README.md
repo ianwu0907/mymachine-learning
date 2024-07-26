@@ -6,4 +6,4 @@
 
 ---
 # Author's Note
-- Most of the files in this repository are written in Chinese. But if there is a need, I could translate them into English. (Anyway I would probably update the English version on my self in the future)
+- Most of the files in this repository are written in Chinese. But if there is a need, I will make an English version then. (Anyway I would probably update the English version on myself in the future)
