@@ -6,3 +6,10 @@
 ---
 # Author's Note
 - Most of the files in this repository are written in Chinese. But if there is a need, I could translate them into English. (Anyway I would probably update the English version on my self in the future)
+
+---
+# myproject — This is a Git folder that documents my computer learning journey
+- 2024/7/22 Update -- A web crawler for ***Douban movie website*** implemented using bs4, requests, and re libraries -- doubancrawl.py
+- 2024/7/23 Update -- A web crawler for ***stock data*** from Eastmoney.net implemented using re, requests, and pandas -- Eastmoney Stock Crawler.py
+- 2024/7/27 Update to the repository ***stockforecasting*** -- A project that predicts stock prices using LSTM
+- 2024/7/27 Files under the ***stockforecasting*** repository have been updated
