@@ -184,8 +184,11 @@ def show(code, train_end, n, columns, p):
     train_mae = mean_absolute_error(train_true, train)
     test_mae = mean_absolute_error(test_true, test)
 
-    train_true[train_true == 0] = np.mean(train_true[train_true != 0])
-    test_true[test_true == 0] = np.mean(test_true[test_true != 0])
+    # train_mask = np.all(train_true != 0, axis=1)  # 确保整行没有0
+    # test_mask = np.all(test_true != 0, axis=1)  # 确保整行没有0
+    #
+    # train_relative_error = np.mean(np.abs((train[train_mask] - train_true[train_mask]) / train_true[train_mask]))
+    # test_relative_error = np.mean(np.abs((test[test_mask] - test_true[test_mask]) / test_true[test_mask]))
 
     train_relative_error = np.mean(np.abs((train_true - train) / train_true))
     test_relative_error = np.mean(np.abs((test_true - test) / test_true))
