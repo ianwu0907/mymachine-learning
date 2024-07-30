@@ -13,3 +13,5 @@
 - 2024/7/23 Update -- A web crawler for ***stock data*** from Eastmoney.net implemented using re, requests, and pandas -- Eastmoney Stock Crawler.py
 - 2024/7/27 Update to the repository ***stockforecasting*** -- A project that predicts stock prices using LSTM
 - 2024/7/27 Files under the ***stockforecasting*** repository have been updated
+- 2024/7/31 Updata ***stockforecasting*** , added prodit-predic algorithm
+- 2024/7/31 Updata ***Bearing_diagnostic*** , added maching-models to classify 10 types of faults with CWRU dataset.

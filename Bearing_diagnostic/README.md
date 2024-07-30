@@ -16,7 +16,7 @@ pip install numpy tensorflow sckit-learn pandas matplotlib pytorch scipy collect
 ```
 ---
 # Updates
--
+- 2024/7/31 added maching-models to classify 10 types of faults with CWRU dataset. ***model_train_10classes.ipynb*** and ***data_create_10classes.py*** are added to the repository.
 ---
 # Author's Note
--
+- The 10 class classification with traditional machine learning technique has a better overall performance.

@@ -46,3 +46,4 @@ To run the program, you need to install the following packages:
 - 2024/7/27 updated data-process method to replace 0 value train/test data in order to calculate the relative errors. (this update is canceled in the latest version)
 - **2024/7/27** updated ***stockcrawler.py*** to ignore data with 0 values when collecting data,user can choose to whether to ignore in the ***stockcrawler.py***, the default is to ignore.
 - 2024/7/27 updated ***stockcrawler.py*** added error check if the stock code is not found.
+- 2024/7/31 updated ***stockforecasting_pre_trainning_v2.ipynb*** with profit prediction which will find the optimum buy and sell points to maximize the profit.
