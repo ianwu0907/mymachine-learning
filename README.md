@@ -3,6 +3,8 @@
 - 2024/7/23 更新 -- 通过re,requests 和pandas实现东方财富网股票数据的爬虫 -- 东方财富网股票爬虫.py
 - 2024/7/27 更新文件夹 ***stockforecasting*** -- 一个使用LSTM预测股票价格的项目
 - 2024/7/27 对***stockforecasting***文件夹下的文件进行了更新
+- 2024/7/31 更新 -- ***stockforecasting***，添加了prodit-predic算法。
+- 2024/7/31 更新 -- ***Bearing-diagnostic***，添加了模型以使用CWRU数据集分类10种故障类型。
 ---
 # Author's Note
 - Most of the files in this repository are written in Chinese. But if there is a need, I could translate them into English. (Anyway I would probably update the English version on my self in the future)
