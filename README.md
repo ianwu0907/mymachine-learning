@@ -5,6 +5,8 @@
 - 2024/7/27 对***stockforecasting***文件夹下的文件进行了更新
 - 2024/7/31 更新 -- ***stockforecasting***，添加了prodit-predic算法。
 - 2024/7/31 更新 -- ***Bearing-diagnostic***，添加了模型以使用CWRU数据集分类10种故障类型。
+- 2024/8/1 更新 -- ***Bearing-diagnostic***，添加了数据预处理和特征提取文件***data_create_CWRU_FFT.ipynb***，该文件对CWRU数据集进行快速傅里叶变换，然后进行包络谱分析，提取3个特征频率数据。
+- 2024/8/1 更新 -- ***Bearing-diagnostic***，添加了文件***model_train_FFT.ipynb***，该文件在从CWRU数据集中提取的特征频率数据上训练机器学习模型。
 ---
 # Author's Note
 - Most of the files in this repository are written in Chinese. But if there is a need, I could translate them into English. (Anyway I would probably update the English version on my self in the future)
@@ -17,3 +19,5 @@
 - 2024/7/27 Files under the ***stockforecasting*** repository have been updated
 - 2024/7/31 Updata ***stockforecasting*** , added prodit-predic algorithm
 - 2024/7/31 Updata ***Bearing_diagnostic*** , added maching-models to classify 10 types of faults with CWRU dataset.
+- 2024/8/1 Updata ***Bearing_diagnostic*** , added data pre-processing and feature extraction file ***data_create_CWRU_FFT.ipynb***, which performs fast-fourier transformation and then Envelope Spectrum Analysis on the CWRU dataset, extracting 3 feature frequency data.
+- 2024/8/1 Updata ***Bearing_diagnostic*** , added file ***model_train_FFT.ipynb***, which trains the machine-learning models on the feature frequency data extracted from the CWRU dataset.
