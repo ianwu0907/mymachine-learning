@@ -12,7 +12,7 @@
 ---
 # Author's Note
 - Most of the files in this repository are written in Chinese. But if there is a need, I could translate them into English. (Anyway I would probably update the English version on my self in the future)
-
+- For code explanation, datasets and ideas sharing, please contact the author at ***[ianwu0907@gmail.com](mailto:)***.
 ---
 # mymachine-learning — This is a Git folder that documents my computer learning journey
 - 2024/7/22 Update -- A web crawler for ***Douban movie website*** implemented using bs4, requests, and re libraries -- doubancrawl.py
